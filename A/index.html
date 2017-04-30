@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>A</title>
+        <script src="main.js"></script>
+        <script src="A.js"></script>        
+    </head>
+
+    <body>
+        <button onclick="loadProgram();">Reset and load ROM</button>
+        <button onclick="turnon();">Turn on computer</button>
+        <button onclick="compute();">Compute!</button>
+        <button onclick="step();">Step</button>
+        <br/>
+        <p id="ROM"></p>
+        <p id="RAM"></p>
+        <p id="A"></p>
+        <p id="IP"></p>
+        <p id="Status"></p>
+        <br/><br/>
+        <textarea type="text" id="program" value="01110000"></textarea><br/>
+	<button onclick="fix();">Remove whitespace and characters</button>
+	<p>
+	0000 - Load A (Const)<br/>
+	0001 - Store A in RAM (Address)<br/>
+	0010 - Load A (Address)<br/>
+	0011 - Send data through COM port (Address)<br/>
+	0100 - Get data through COM port (Address)<br/>
+	0101 - Jump (ROM Address)<br/>
+	0110 - Nothing<br/>
+	0111 - Halt<br/>
+	1000 - Add (Address)<br/>
+	1001 - Subtract (Address)<br/>
+	1010 - Xor (Address)<br/>
+	1011 - Or (Address)<br/>
+	1100 - And (Address)<br/>
+	1101 - Jump if A (ROM Address)<br/>
+	1110 - Shift right (Address)<br/>
+	1111 - Shift left (Address)<br/><br/>
+	Example:<br/>
+	11010001 (Jump to address 1 if A)
+	</p>
+    </body>
+</html>
