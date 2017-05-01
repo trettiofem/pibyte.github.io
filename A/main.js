@@ -48,4 +48,5 @@ function fix()
 {
     document.getElementById("program").value = document.getElementById("program").value.replace(/\s+/g, '');
     document.getElementById("program").value = document.getElementById("program").value.replace(/\D/g,'');
+    document.getElementById("program").value = document.getElementById("program").value.replace(/[2-9]/g, '');
 }
