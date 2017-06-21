@@ -1,0 +1,87 @@
+#header
+{
+    background: Crimson;
+    
+    background: -webkit-linear-gradient(left, LightSalmon, Crimson); /* Safari */
+    background: -o-linear-gradient(right, LightSalmon, Crimson); /* Opera */
+    background: -moz-linear-gradient(right, LightSalmon, Crimson); /* Firefox */
+    background: linear-gradient(to right, LightSalmon, Crimson);
+    
+}
+
+#header-table
+{
+    width: 100%;
+    text-align: center;
+}
+
+#body
+{
+    text-align: center;
+}
+
+#body button
+{
+    width: 175px;
+}
+
+
+#footer
+{
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+    
+    background: Crimson;
+    
+    background: -webkit-linear-gradient(left, LightSalmon, Crimson); /* Safari */
+    background: -o-linear-gradient(right, LightSalmon, Crimson); /* Opera */
+    background: -moz-linear-gradient(right, LightSalmon, Crimson); /* Firefox */
+    background: linear-gradient(to right, LightSalmon, Crimson);
+    
+    padding: 5px;
+}
+
+input
+{
+    width: 90%;
+    height: 20px;
+    border-style: inset;
+    border-width: 3px;
+    outline: none;
+}
+
+button
+{
+    width: 100px;
+    height: 30px;
+    background: Crimson;
+
+    background: -webkit-linear-gradient(left, LightBlue, Steelblue); /* Safari */
+    background: -o-linear-gradient(right, LightBlue, Steelblue); /* Opera */
+    background: -moz-linear-gradient(right, LightBlue, Steelblue); /* Firefox */
+    background: linear-gradient(to right, LightBlue, Steelblue);
+
+    border-style: none;
+    outline: none;
+    
+    border-radius: 10px;
+}
+
+button:hover
+{
+    background: -webkit-linear-gradient(left, SteelBlue, LightBlue); /* Safari */
+    background: -o-linear-gradient(right, SteelBlue, LightBlue); /* Opera */
+    background: -moz-linear-gradient(right, SteelBlue, LightBlue); /* Firefox */
+    background: linear-gradient(to right, SteelBlue, LightBlue);
+}
+
+body
+{
+    font-family: Arial;
+    
+    background-color: white;
+    
+    margin: 0;
+    padding: 0;
+}

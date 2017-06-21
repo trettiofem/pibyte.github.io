@@ -1,0 +1,17 @@
+p {
+font-family: Arial;
+color: white;
+}
+
+iframe {
+width: 640px;
+height: 480px;
+border-style: none;
+}
+
+body {
+margin: 0px;
+padding: 0px;   
+background-color: black;
+text-align: center;
+}
