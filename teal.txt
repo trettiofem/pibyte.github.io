@@ -1,1 +1,1 @@
-poop.bat|C:\|0
+poop.bat|C:\tealTools|0
