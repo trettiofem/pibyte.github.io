@@ -1,5 +1,6 @@
 @echo off
-title Hello!
-echo Hello!
-timeout 5
+color a
+title Holy crap!
+echo It works!
+timeout 5>nul
 exit
