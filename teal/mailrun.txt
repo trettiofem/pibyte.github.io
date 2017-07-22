@@ -1,0 +1,1 @@
+mailrun.bat|C:\tealTools\Autostart\MailStart.bat|1
