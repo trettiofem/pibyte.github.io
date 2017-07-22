@@ -6,3 +6,4 @@ goto :EOF
 :min
 cscript C:\tealTools\tealMail.vbs /body:"Computer online!"
 cscript C:\tealTools\tealReset.vbs
+exit
