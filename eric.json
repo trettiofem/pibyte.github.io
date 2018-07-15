@@ -1,0 +1,5 @@
+{
+  files: [
+    {"file": "test.txt", "dir": "C:\tmp"}
+  ]
+}
