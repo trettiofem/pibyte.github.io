@@ -259,8 +259,13 @@ function loadErrorConsole() {
     function createErrorLi(err) {
       var timestampEl = span('timestamp', [ formatDate(new Date()) ]);
       var messageEl   = span('message',   [ err.message            ]);
+      var metadataEl  = span('metadata',  [ err.stack              ]);
+      
+      /* old
       var metadataEl  = span('metadata',  ('lineNumber' in err)
                              && [ String(err.lineNumber) ]);
+      */
+                       
       var li          = createElement('li', {}, [ timestampEl,
                                                   messageEl,
                                                   metadataEl ]);
