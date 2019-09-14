@@ -261,6 +261,8 @@ function loadErrorConsole() {
       var messageEl   = span('message',   [ err.message            ]);
       var metadataEl  = span('metadata',  [ err.stack              ]);
       
+      alert(err.stack);
+      
       /* old
       var metadataEl  = span('metadata',  ('lineNumber' in err)
                              && [ String(err.lineNumber) ]);
