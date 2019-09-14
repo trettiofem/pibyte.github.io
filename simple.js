@@ -239,7 +239,7 @@ function init()
   };
   
   loadErrorConsole();
-  loadScript("https://www.koda.nu/advanced.js", simplify);
+  loadScript("https://pibyte.github.io/advanced.js", simplify);
 }
 
 function loadErrorConsole() {
