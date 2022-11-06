@@ -1,0 +1,77 @@
+:root {
+    --color-black: #131513;
+    --color-white: #FFFFFF;
+    --color-yellow: #FCBA04;
+    --color-red: #DB162F;
+
+    font-family: 'Atkinson Hyperlegible', sans-serif;
+    user-select: none;
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* Disable scrolling */
+/* html, body { margin: 0; height: 100%; overflow: hidden }*/
+
+/* Main screen */
+
+#sections {
+    display: flex;
+}
+
+#video {
+    height: 100vh;
+    width: 100vh;
+}
+
+/* Sidebar */
+
+#sidebar {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+/* Time */
+
+#time {
+    box-sizing: border-box;
+    padding: 16px;
+    height: 33.333333%;
+
+    font-size: 32px;
+    color: var(--color-white);
+
+    background-color: var(--color-black);
+}
+
+#date, #clock {
+    font-weight: bold;
+}
+
+/* Gym */
+
+#gym {
+    box-sizing: border-box;
+    padding: 16px;
+    height: 66.666667%;
+
+    direction: rtl;
+    color: var(--color-black);
+    font-size: 24px;
+
+    background-color: var(--color-yellow);
+}
+
+#gymDay {
+    font-size: 32px;
+    font-weight: bold;
+}
+
+#logo {
+    position: fixed;
+    bottom: 16px;
+    right: 16px;
+}

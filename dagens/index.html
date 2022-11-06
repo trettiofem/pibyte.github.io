@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Dagens</title>
+        
+        <meta charset="UTF-8">
+
+        <link rel="apple-touch-icon" sizes="180x180" href="./favicon/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="./favicon/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="./favicon/favicon-16x16.png">
+        <link rel="manifest" href="./favicon/site.webmanifest">
+        
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&display=swap" rel="stylesheet">
+        
+        <link rel="stylesheet" href="./stylesheets/reset.css">
+        <link rel="stylesheet" href="./stylesheets/main.css">
+        <link rel="stylesheet" href="./stylesheets/todo.css">
+        <link rel="stylesheet" href="./stylesheets/alert.css">
+
+        <script src="scripts/alert.js"></script>
+        <script src="scripts/todo.js"></script>
+    </head>
+    
+    <body>
+        <div id="main">
+            <div id="sections">
+                <video id="video" autoplay loop>
+                    <source src="videos/mealbox.mp4" type="video/mp4">
+                </video>
+                <div id="sidebar">
+                    <div id="time">
+                        <p id="date">3 Jan 2023</p>
+                        <p id="clock">16:46:30</p>
+                        <p id="weekday">Tisdag</p>
+                        <p id="week">vecka 1</p>
+                    </div>
+                    <div id="gym">
+                        <p id="gymDay">Push #1</p>
+                        <div id="exercises">
+                            <p>Bench press</p>
+                            <p>Military press</p>
+                            <p>Incline bench press</p>
+                            <p>Dips</p>
+                            <p>Chest flies</p>
+                            <p>Face pull</p>
+                            <p>Triceps</p>
+                        </div>
+                        <img id="logo" src="./img/logo.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="todo" class="hidden">
+            <div id="todoTitle">
+                <p>Att göra</p>
+                <hr/>
+            </div>
+
+            <div class="todoItem">
+                <div class="checkbox">
+                    <div class="box"></div>
+                    <div class="check"></div>
+                </div>
+                <p class="strikeThroughText">Gör frukost</p>
+            </div>
+
+            <div class="todoItem">
+                <div class="checkbox">
+                    <div class="box"></div>
+                    <div class="check hidden"></div>
+                </div>
+                <p class="">Diska</p>
+            </div>
+
+        </div>
+
+        <div id="alert" class="hidden">
+            <canvas id="alertCanvas"></canvas>
+
+            <div id="alertWindow">
+                <p id="alertMessage">Gå och lägg dig.</p>
+                <p id="alertTimedown">Rutan försvinner om 10</p>
+            </div>
+        </div>
+
+        <script src="./scripts/main.js"></script>
+    </body>
+</html>
