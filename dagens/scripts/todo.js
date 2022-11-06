@@ -4,15 +4,13 @@ class Todo
     {
         // DOM
         this.todoDiv = document.getElementById("todo");
+
+        this.video = document.getElementById("video");
+        this.video.addEventListener("click", this.toggleWindow.bind(this));
     }
 
-    openWindow()
+    toggleWindow()
     {
-        this.todoDiv.classList.remove("hidden");
-    }
-
-    closeWindow()
-    {
-        this.todoDiv.classList.add("hidden");
+        this.todoDiv.classList.toggle("hidden");
     }
 }

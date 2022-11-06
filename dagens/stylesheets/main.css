@@ -77,3 +77,18 @@ html, body { margin: 0; height: 100%; overflow: hidden }
     width: 44px;
     height: 44px;
 }
+
+/* Debug stuff */
+
+#debug {
+    font-family:'Courier New', Courier, monospace;
+
+    z-index: 1000;
+    position: fixed;
+    background-color: rgb(0, 0, 128);
+    color: white;
+}
+
+#debugVersion {
+    font-weight: bold;
+}

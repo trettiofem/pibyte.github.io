@@ -9,7 +9,7 @@ class Alert
         this.alertDiv = document.getElementById("alert");
         this.alertCanvas = document.getElementById("alertCanvas");
 
-        this.video = document.getElementById("video");
+        this.video = document.getElementById("video"); // remove
 
         // Setup canvas
         this.alertCanvas.width = window.innerWidth;
@@ -25,14 +25,20 @@ class Alert
 
         this.stripeWidth = 100;
         this.stripeSpeed = 10;
+
+        // Audio
+        this.alertJingle = new Audio("./img/alert.mp3");
     }
 
     createAlert(message)
     {
         if (this.running)
         {
-            throw new Error("Alert has already been called!");
+            debugError("Alert has already been called!");
+            return;
         }
+
+        this.alertJingle.play();
 
         this.running = true;
         this.frame = 0;
@@ -40,7 +46,7 @@ class Alert
 
         // Update labels
         this.messageLabel.innerHTML = message;
-        this.timedownLabel.innerHTML = this.timedownMessage.replace("%", this.time.toString());
+        this.timedownLabel.innerHTML = String.format(this.timedownMessage, this.time.toString());
 
         this.video.pause();
 
@@ -71,6 +77,8 @@ class Alert
             this.alertDiv.classList.add("hidden");
             
             this.video.play();
+            this.alertJingle.pause();
+            this.alertJingle.currentTime = 0;
 
             this.running = false;
         }
@@ -81,19 +89,17 @@ class Alert
         this.frame++;
 
         // Draw background
-        var stripes = Math.ceil(this.alertCanvas.height / this.stripeWidth / 2) + 1;
-
         this.ctx.fillStyle = COLOR_YELLOW;
         this.ctx.fillRect(0, 0, this.alertCanvas.width, this.alertCanvas.height);
 
         // Draw stripes
+        var stripes = Math.ceil(this.alertCanvas.height / this.stripeWidth / 2) + 1;
+
         var offset = ((this.frame * this.stripeSpeed) % (this.stripeWidth * 2)) - this.stripeWidth; //idk, it works
 
+        this.ctx.fillStyle = COLOR_RED;
         for (var i = 0; i < stripes; i++)
-        {
-            this.ctx.fillStyle = COLOR_RED;
             this.ctx.fillRect(0, offset + (i * this.stripeWidth * 2), this.alertCanvas.width, this.stripeWidth);
-        }
 
         // Next frame
         if (this.running)

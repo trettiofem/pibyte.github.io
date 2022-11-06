@@ -25,9 +25,18 @@
 
         <script src="scripts/alert.js"></script>
         <script src="scripts/todo.js"></script>
+        <script src="scripts/time.js"></script>
+
+        <script src="scripts/debug.js"></script>
     </head>
     
     <body>
+        <div id="debug" class="">
+            <p id="debugVersion">Debug v.1</p>
+            <p id="debugError">no errors</p>
+            <p id="debug0"></p>
+            <p id="debug1"></p>
+        </div>
         <div id="main">
             <div id="sections">
                 <video id="video" autoplay loop>
@@ -35,10 +44,10 @@
                 </video>
                 <div id="sidebar">
                     <div id="time">
-                        <p id="date">3 Jan 2023</p>
-                        <p id="clock">16:46:30</p>
-                        <p id="weekday">Tisdag22</p>
-                        <p id="week">vecka 1</p>
+                        <p id="date"></p>
+                        <p id="clock"></p>
+                        <p id="weekday"></p>
+                        <p id="week"></p>
                     </div>
                     <div id="gym">
                         <p id="gymDay">Push #1</p>
@@ -85,8 +94,8 @@
             <canvas id="alertCanvas"></canvas>
 
             <div id="alertWindow">
-                <p id="alertMessage">Gå och lägg dig.</p>
-                <p id="alertTimedown">Rutan försvinner om 10</p>
+                <p id="alertMessage"></p>
+                <p id="alertTimedown"></p>
             </div>
         </div>
 
