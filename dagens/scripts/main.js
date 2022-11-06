@@ -16,6 +16,8 @@ String.format = (string, ...subseq) => {
 };
 
 window.addEventListener("load", () => { 
+    debugPrint(0, `inner: ${window.innerWidth}x${window.innerHeight}`);
+    debugPrint(1, `outer: ${window.outerWidth}x${window.outerHeight}`);
 });
 
 const todo = new Todo();
