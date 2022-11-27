@@ -22,81 +22,80 @@
         <link rel="stylesheet" href="./stylesheets/main.css">
         <link rel="stylesheet" href="./stylesheets/todo.css">
         <link rel="stylesheet" href="./stylesheets/alert.css">
+        <link rel="stylesheet" href="./stylesheets/icons.css">
+        <link rel="stylesheet" href="./stylesheets/pressable.css">
+        <link rel="stylesheet" href="./stylesheets/splash.css">
+
+        <link rel="preload" as="image" href="/res/loading.svg">
+        <link rel="preload" as="image" href="/res/logo.svg">
+        <link rel="preload" as="image" href="/res/pause.svg">
+        <link rel="preload" as="image" href="/res/play.svg">
 
         <script src="scripts/alert.js"></script>
         <script src="scripts/todo.js"></script>
         <script src="scripts/time.js"></script>
-
+        <script src="scripts/video.js"></script>
+        <script src="scripts/gym.js"></script>
         <script src="scripts/debug.js"></script>
+        <script src="scripts/item.js"></script>
+        <script src="scripts/format.js"></script>
+        <script src="scripts/controller.js"></script>
+        <script src="scripts/preload.js"></script>
     </head>
     
     <body>
-        <div id="debug" class="">
-            <p id="debugVersion">Debug v.3</p>
-            <p id="debugError">no errors</p>
-            <p id="debug0"></p>
-            <p id="debug1"></p>
+        <div id="debug" class="debug hidden">
+            <p class="debug-version">DAGENS v0.35</p>
         </div>
-        <div id="main">
-            <div id="sections">
-                <video id="video" autoplay loop>
-                    <source src="videos/mealbox.mp4" type="video/mp4">
-                </video>
-                <div id="sidebar">
-                    <div id="time">
-                        <p id="date"></p>
-                        <p id="clock"></p>
-                        <p id="weekday"></p>
-                        <p id="week"></p>
+
+        <div class="decoy">
+            <h1>fuck webkit! -35</h1>
+        </div>
+
+        <div class="main">
+            <div class="main-sections">
+                <video class="main-video" id="main-video" playsinline muted autoplay loop></video>
+                <div class="main-sidebar">
+                    <div class="main-time">
+                        <p id="main-date" class="main-date"></p>
+                        <p id="main-clock" class="main-clock"></p>
+                        <p id="main-weekday" class="main-weekday"></p>
+                        <p id="main-week" class="main-week"></p>
                     </div>
-                    <div id="gym">
-                        <p id="gymDay">Push #1</p>
-                        <div id="exercises">
-                            <p>Bench press</p>
-                            <p>Military press</p>
-                            <p>Incline bench press</p>
-                            <p>Dips</p>
-                            <p>Chest flies</p>
-                            <p>Face pull</p>
-                            <p>Triceps</p>
-                        </div>
-                        <img id="logo" src="./img/logo.png" alt="">
+                    <div class="main-gym">
+                        <p id="main-gym-day" class="main-gym-day"></p>
+                        <div id="main-gym-exercises" class="main-gym-exercises"></div>
+                        <div id="main-play-button" class="main-play-button pressable icon icon-pause"></div>
+                        <div id="main-alert-test" class="main-alert-test"></div>
                     </div>
                 </div>
             </div>
         </div>
 
-        <div id="todo" class="hidden">
-            <div id="todoTitle">
-                <p>Att göra</p>
-                <hr/>
-            </div>
-
-            <div class="todoItem">
-                <div class="checkbox">
-                    <div class="box"></div>
-                    <div class="check"></div>
-                </div>
-                <p class="strikeThroughText">Gör frukost</p>
-            </div>
-
-            <div class="todoItem">
-                <div class="checkbox">
-                    <div class="box"></div>
-                    <div class="check hidden"></div>
-                </div>
-                <p class="">Diska</p>
-            </div>
-
+        <div id="todo-background" class="todo-background hidden"></div>
+        <div id="todo-window" class="todo-window hidden">
+            <p id="todo-title" class="todo-title"></p>
+            <div class="todo-hr"></div>
         </div>
 
         <div id="alert" class="hidden">
-            <canvas id="alertCanvas"></canvas>
+            <canvas id="alert-canvas" class="alert-canvas"></canvas>
 
-            <div id="alertWindow">
-                <p id="alertMessage"></p>
-                <p id="alertTimedown"></p>
+            <div id="alert-window" class="alert-window">
+                <p id="alert-message" class="alert-message"></p>
+                <div class="alert-progress-bar">
+                    <div id="alert-progress-bar-indicator" class="alert-progress-bar-indicator"></div>
+                </div>
             </div>
+        </div>
+
+        <div id="orientation-warning" class="orientation-warning">
+            <p>Rotera enheten, tack.</p>
+        </div>
+
+        <div id="splash-screen" class="splash-screen">
+            <img src="./res/logo.svg" alt="" class="splash-logo" />
+            <img src="./res/loading.svg" alt="" class="splash-loading" />
         </div>
 
         <script src="./scripts/main.js"></script>

@@ -1,4 +1,4 @@
-#alertCanvas {
+.alert-canvas {
     position: fixed;
     top: 0;
     left: 0;
@@ -6,7 +6,7 @@
     height: 100vh;
 }
 
-#alertWindow {
+.alert-window {
     /* Place in center */
     position: fixed;
     top: 50%;
@@ -19,37 +19,41 @@
     background-color: var(--color-white);
     box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.25);
     border-radius: 5px;
-
-    font-size: 32px;
-
-    animation: slideIn 2s ease;
 }
 
-#alertMessage {
+.alert-message {
     font-size: 64px;
     font-weight: bold;
     text-align: center;
 
+    color: var(--color-black);
+
     position: absolute;
-    width: 80%;
+    width: calc(100% - 64px); /* 32px * 2 */
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
 
-#alertTimedown {
+.alert-progress-bar {
     position: absolute;
+    
+    width: calc(100% - 64px); /* 32px * 2 */
+    height: 2px;
+    border-radius: 1px;
+
     bottom: 32px;
-    right: 32px;
+    left: 50%;
+    transform: translate(-50%, 0);
+
+    background-color: rgba(0, 0, 0, 0.10);
 }
 
-@keyframes slideIn {
-    0% {
-        transform: translate(-50%, -50%) translateY(-100vh);
-    }
+.alert-progress-bar-indicator {
+    background-color: var(--color-red);
 
-    100% {
-        transform: translate(-50%, -50%);
-    }
-    
+    border-radius: inherit;
+
+    width: 0%;
+    height: 100%;
 }

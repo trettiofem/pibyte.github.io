@@ -1,17 +1,8 @@
 // Makes it easier to debug on an iPad
-function debugPrint(variable, message)
+function debugPrint(message)
 {
-    try {
-        document.getElementById(`debug${variable}`).innerHTML = message.toString();
-    }
-    catch(e) {
-        debugError(`Unknown variable: ${variable}`);
-    }
-    
-}
+    var element = document.createElement("p");
+    element.innerHTML = message;
 
-function debugError(message)
-{
-    document.getElementById("debugError").innerHTML = message.toString();
-    console.error(message.toString());
+    document.getElementById("debug").appendChild(element);
 }

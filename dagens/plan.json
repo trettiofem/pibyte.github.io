@@ -1,0 +1,34 @@
+{
+    "reset": { "h": "4", "m": "0" },
+    "videos": ["/media/mealbox.mp4", "/media/homecoming.mp4", "/media/lth.mp4"],
+	"jingle": "/media/alert.mp3",
+    "gym": [
+        { "name": "Push #1", "exercises": ["Bench press", "Military press", "Incline bench press", "Dips", "Chest flies", "Face pull", "Triceps"] },
+        { "name": "Pull #1", "exercises": ["Pull ups", "Bend over rows", "Close grip lat pulldown", "Seated rows", "Lats (?)", "Biceps curls", "Shrugs"] },
+        { "name": "Legs #1", "exercises": ["Squats", "Romanian deadlifts", "Leg extensions", "Leg curls", "Leg press", "Goblet squats with kettlebell swing", "Seated calf raises" ] },
+        { "name": "Rest",    "exercises": ["(tomt)"] },
+        { "name": "Push #2", "exercises": ["Military press", "Incline bench press", "Seated shoulder press", "Close grip bench press", "Lateral raises", "Rear delt flies", "Triceps (?)"] },
+        { "name": "Pull #2", "exercises": ["Pull ups", "Bend over rows", "Close grip lat pulldown", "Seated rows", "Low row", "Dumbbell rows", "Biceps (?)"] },
+        { "name": "Legs #2", "exercises": ["Squats", "Deadlifts", "Hip thrusts", "Bulgarian squats", "Leg extensions", "Leg curls", "Calf raises", "Streching"] },
+        { "name": "Rest",    "exercises": ["(tomt)"] }
+    ],
+    "alerts": [
+        { "h": 6,  "m": 0, "message": "Ät frukost." },
+        { "h": 9,  "m": 0, "message": "Ta en paus." },
+        { "h": 12, "m": 0, "message": "Ät lunch." },
+        { "h": 15, "m": 0, "message": "Ta en paus." },
+        { "h": 18, "m": 0, "message": "Ät middag." },
+        { "h": 19, "m": 30,"message": "Gå till gymmet." },
+        { "h": 21, "m": 0, "message": "Ta en paus." },
+        { "h": 22, "m": 0, "message": "Gå och lägg dig." }
+    ],
+    "todo": [
+        ["Tvätta", "Vik tvätt", "Gör frukost", "Diska"],
+        ["Undanplockning", "Dammsugning", "Badrum", "Gör frukost", "Diska"],
+        ["Gör frukost", "Diska"],
+        ["Undanplockning", "Dammsugning", "Badrum", "Gör frukost", "Diska"],
+        ["Gör frukost", "Diska"],
+        ["Gör frukost", "Diska"],
+        ["Undanplockning", "Dammsugning", "Badrum", "Gör frukost", "Diska"]
+    ]
+}

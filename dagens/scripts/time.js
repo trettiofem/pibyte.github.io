@@ -2,28 +2,26 @@ class Time
 {
     constructor()
     {
-        this.dateLabel = document.getElementById("date");
-        this.clockLabel = document.getElementById("clock");
-        this.weekdayLabel = document.getElementById("weekday");
-        this.weekLabel = document.getElementById("week");
+        this.alerts = [];
+        this.createAlertFunction = null;
+
+        // DOM
+        this.dateLabel = document.getElementById("main-date");
+        this.clockLabel = document.getElementById("main-clock");
+        this.weekdayLabel = document.getElementById("main-weekday");
+        this.weekLabel = document.getElementById("main-week");
 
         this.weekdays = ["söndag", "måndag", "tisdag", "onsdag", "torsdag", "fredag", "lördag"];
-        this.months = ["jan.", "feb.", "apr.", "maj", "juni", "juli", "aug.", "sep.", "okt.", "nov.", "dec."];
+        this.months = ["jan.", "feb.", "mars", "apr.", "maj", "juni", "juli", "aug.", "sep.", "okt.", "nov.", "dec."];
 
         this.dateFormat = "% % %";
         this.clockFormat = "%:%:%";
         this.weekdayFormat = "%";
         this.weekFormat = "vecka %";
-
-        this.interval = setInterval(this.count.bind(this), 1000);
-        this.count();
     }
 
-    count()
+    update(now)
     {
-        // Update the time
-        var now = new Date();
-
         var date = String.format(
             this.dateFormat,
             now.getDate().toString(),
@@ -40,7 +38,7 @@ class Time
 
         var weekday = String.format(
             this.weekdayFormat,
-            this.weekdays[(now.getDay() + 1) & 7]
+            this.weekdays[now.getDay()]
         );
 
         // Get the current week nr.

@@ -3,27 +3,11 @@
 const COLOR_RED = "rgb(219, 22, 47)";
 const COLOR_YELLOW = "rgb(252, 186, 4)";
 
-// Good function to have
-String.format = (string, ...subseq) => {
+const PLAN_URL = "/plan.json";
 
-    var currentString = string;
-    for (var seq of subseq)
-    {
-        currentString = currentString.replace("%", seq);
-    }
+const c = new Controller();
+c.load();
 
-    return currentString;
-};
-
-window.addEventListener("load", () => { 
-    debugPrint(0, `inner: ${window.innerWidth}x${window.innerHeight}`);
-    debugPrint(1, `outer: ${window.outerWidth}x${window.outerHeight}`);
-});
-
-const todo = new Todo();
-const alert = new Alert();
-const time = new Time();
-
-document.getElementById("logo").addEventListener("click", () => {
-    alert.createAlert("Test");
+document.getElementById("bruh").addEventListener("click", () => {
+    c.alertTest();
 });

@@ -3,13 +3,12 @@ class Alert
     constructor()
     {
         // DOM
-        this.messageLabel = document.getElementById("alertMessage");
-        this.timedownLabel = document.getElementById("alertTimedown");
+        this.messageLabel = document.getElementById("alert-message");
+        this.progressBar = document.getElementById("alert-progress-bar-indicator");
 
         this.alertDiv = document.getElementById("alert");
-        this.alertCanvas = document.getElementById("alertCanvas");
-
-        this.video = document.getElementById("video"); // remove
+        this.alertCanvas = document.getElementById("alert-canvas");
+        this.alertWindow = document.getElementById("alert-window");
 
         // Setup canvas
         this.alertCanvas.width = window.innerWidth;
@@ -18,8 +17,7 @@ class Alert
 
         // Other
         this.running = false;
-        this.time = 10; // seconds
-        this.timedownMessage = "Rutan försvinner om %...";
+        this.time = 10000; // ms
         this.frame = 0;
         this.waitedSeconds = 0;
 
@@ -27,14 +25,30 @@ class Alert
         this.stripeSpeed = 10;
 
         // Audio
-        this.alertJingle = new Audio("./img/alert.mp3");
+        this.alertJingle = null;
+
+        // Animations
+        this.slideInAnimation = {
+            transform: ["translate(-50%, -50%) translateY(-100vh)", "translate(-50%, -50%)"],
+            easing: ["ease"]
+        };
+
+        this.progressAnimation = {
+            width: ["0%", "100%"],
+            easing: ["linear"]
+        }
+    }
+
+    loadJingle(url)
+    {
+        this.alertJingle = new Audio(url);
     }
 
     createAlert(message)
     {
         if (this.running)
         {
-            debugError("Alert has already been called!");
+            debugPrint("Error: Alert has already been called!");
             return;
         }
 
@@ -42,46 +56,33 @@ class Alert
 
         this.running = true;
         this.frame = 0;
-        this.waitedSeconds = 0;
 
-        // Update labels
+        // Update message
         this.messageLabel.innerHTML = message;
-        this.timedownLabel.innerHTML = String.format(this.timedownMessage, this.time.toString());
-
-        this.video.pause();
 
         // Start timer
-        this.interval = setInterval(this.count.bind(this), 1000);
+        this.interval = setTimeout(this.done.bind(this), this.time);
 
         // Start background animation
         this.update();
 
         // Show alert div
         this.alertDiv.classList.remove("hidden");
+        this.alertWindow.animate(this.slideInAnimation, 2000);
+
+        // Progress bar animation
+        this.progressBar.animate(this.progressAnimation, this.time);
     }
 
-    count()
+    done()
     {
-        if (this.waitedSeconds < this.time - 1)
-        {
-            // Update timedown label
-            this.waitedSeconds++;
-            this.timedownLabel.innerHTML = this.timedownMessage.replace("%", (this.time - this.waitedSeconds).toString());
-        }
-        else
-        {
-            // Stop the timer
-            clearInterval(this.interval);
+        // Hide alert div
+        this.alertDiv.classList.add("hidden");
 
-            // Hide alert div
-            this.alertDiv.classList.add("hidden");
-            
-            this.video.play();
-            this.alertJingle.pause();
-            this.alertJingle.currentTime = 0;
+        this.alertJingle.pause();
+        this.alertJingle.currentTime = 0;
 
-            this.running = false;
-        }
+        this.running = false;
     }
 
     update()
