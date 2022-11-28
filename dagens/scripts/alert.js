@@ -17,7 +17,7 @@ class Alert
 
         // Other
         this.running = false;
-        this.time = 10000; // ms
+        this.time = 30000; // ms
         this.frame = 0;
         this.waitedSeconds = 0;
 
