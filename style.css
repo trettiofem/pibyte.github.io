@@ -1,0 +1,89 @@
+body {
+    font-family: 'Old Standard TT', serif;
+    font-size: 32px;
+    background-color: #F0F0FF;
+}
+
+/* Splash */
+.splash-screen {
+    z-index: 1;
+    position: fixed;
+    
+    width: 100%;
+    height: 100%;
+    
+    background-color: inherit;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo-exolabs {
+    width: 50%;
+}
+
+/* Main */
+.main-screen {
+    position: fixed;
+
+    box-sizing: border-box;
+    padding: 20px;
+
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+}
+
+.exo-definition {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.divider {
+    width: 100%;
+    height: 2px;
+    background-color: rgba(0, 0, 0, 1);
+    border-radius: 1px;
+    align-self: center;
+}
+
+.logo-35 {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 44px;
+}
+
+.contact-link {
+    text-decoration: none;
+    font-family: monospace;
+    font-size: 24px;
+    color: #0050FF;
+
+    transition: color 0.2s;
+}
+
+.contact-link:hover {
+    color: #00A0FF;
+}
+
+.contact-link:active {
+    color: #000;
+}
+
+/* Text */
+.text-title { font-size: 64px; }
+.text-bold { font-weight: bold; }
+.text-italic { font-style: italic; }
+
+/* Other */
+.hidden {
+    display: none !important;
+}
